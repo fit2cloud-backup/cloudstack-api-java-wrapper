@@ -25,6 +25,7 @@ import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.ListVirtua
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.RebootVirtualMachineRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.StartVirtualMachineRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.StopVirtualMachineRequest;
+import com.fit2cloud.cloudstack.wsclient.model.request.volume.DeleteVolumeRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.volume.ListVolumesRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.vpc.ListVPCsRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.zone.ListZonesRequest;
@@ -51,6 +52,7 @@ import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.ListVirtu
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.RebootVirtualMachineResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.StartVirtualMachineResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.StopVirtualMachineResponse;
+import com.fit2cloud.cloudstack.wsclient.model.response.volume.DeleteVolumeResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.volume.ListVolumesResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.vpc.ListVPCsResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.zone.ListZonesResponse;
@@ -125,8 +127,8 @@ public interface ICloudStackWSClient {
 //	public DetachVolumeResponse detachVolume(DetachVolumeRequest detachVolumeRequest) throws CloudStackClientException, CloudStackServiceException, IOException;
 //
 //	public CreateVolumeResponse createVolume(CreateVolumeRequest createVolumeRequest) throws CloudStackClientException, CloudStackServiceException, IOException;
-//
-//	public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest deleteVolumeRequest) throws CloudStackClientException, CloudStackServiceException, IOException;
+
+	public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest deleteVolumeRequest) throws CloudStackClientException, CloudStackServiceException, IOException;
 
 	public ListVolumesResponse listVolumes(ListVolumesRequest listVolumesRequest) throws CloudStackClientException, CloudStackServiceException, IOException;
 

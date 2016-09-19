@@ -3,19 +3,13 @@ package com.fit2cloud.cloudstack.wsclient.model.response.volume;
 import com.fit2cloud.cloudstack.wsclient.model.response.Response;
 
 public class DeleteVolumeResponse extends Response {
-	private String displaytext;
-	public String getDisplaytext() {
-		return displaytext;
-	}
-	public void setDisplaytext(String displaytext) {
-		this.displaytext = displaytext;
-	}
-	private String success;
-	public String getSuccess() {
-		return success;
-	}
-	public void setSuccess(String success) {
-		this.success = success;
+	private DeleteVolumeResponseDetail deletevolumeresponse;
+
+	public DeleteVolumeResponseDetail getDeletevolumeresponse() {
+		return deletevolumeresponse;
 	}
 
+	public void setDeletevolumeresponse(DeleteVolumeResponseDetail deletevolumeresponse) {
+		this.deletevolumeresponse = deletevolumeresponse;
+	}
 }

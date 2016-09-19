@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import com.fit2cloud.cloudstack.wsclient.CloudStackWSClient;
 import com.fit2cloud.cloudstack.wsclient.ICloudStackWSClient;
+import com.fit2cloud.cloudstack.wsclient.constants.CapacityType;
 import com.fit2cloud.cloudstack.wsclient.constants.TemplateFilterType;
 import com.fit2cloud.cloudstack.wsclient.constants.VolumeType;
 import com.fit2cloud.cloudstack.wsclient.domain.model.Template;
@@ -41,6 +42,7 @@ import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.ListVirtua
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.RebootVirtualMachineRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.StartVirtualMachineRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.virtualmachine.StopVirtualMachineRequest;
+import com.fit2cloud.cloudstack.wsclient.model.request.volume.DeleteVolumeRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.volume.ListVolumesRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.vpc.ListVPCsRequest;
 import com.fit2cloud.cloudstack.wsclient.model.request.zone.ListZonesRequest;
@@ -67,6 +69,7 @@ import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.ListVirtu
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.RebootVirtualMachineResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.StartVirtualMachineResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.virtualmachine.StopVirtualMachineResponse;
+import com.fit2cloud.cloudstack.wsclient.model.response.volume.DeleteVolumeResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.volume.ListVolumesResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.vpc.ListVPCsResponse;
 import com.fit2cloud.cloudstack.wsclient.model.response.zone.ListZonesResponse;
@@ -268,7 +271,16 @@ public class CloudStackAPITest {
 	//@Test
 	public void testListCapacity() throws Exception {
 		ListCapacityRequest req = new ListCapacityRequest();
+		req.setType(""+CapacityType.CAPACITY_TYPE_SECONDARY_STORAGE);
 		ListCapacityResponse resp = cloudStackWSClient.listCapability(req);
+		System.out.println(new Gson().toJson(resp));
+	}
+	
+	//@Test
+	public void testDeleteVolume() throws Exception {
+		DeleteVolumeRequest req = new DeleteVolumeRequest();
+		req.setId("e899915d-c98b-4202-868f-bab4eb37b89a");
+		DeleteVolumeResponse resp = cloudStackWSClient.deleteVolume(req);
 		System.out.println(new Gson().toJson(resp));
 	}
 	
